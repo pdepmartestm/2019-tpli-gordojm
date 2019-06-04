@@ -8,6 +8,9 @@ padre(karina,victoria).
 
 hermano(gabriel,vivi).
 hermano(jose,guille).
+hermano(P1,P2):-
+	padre(Padre, P1),
+	padre(Padre,P2).
 hermano(P1,P2):- hermano(P2,P1).
 
 casados(jose,vivi).
