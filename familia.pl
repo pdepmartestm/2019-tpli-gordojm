@@ -28,7 +28,15 @@ cuniado(Persona1,Persona2):-
 	
 hijo(Persona1,Persona2):- padre(Persona2, Persona1).
 
-primo(Persona1,Persona1):-
+/*primo(Persona1,Persona1):-
 	padre(PadreP1,Persona1),
 	padre(PadreP2,Persona2),
-	hermano(PadreP1,PadreP2).
+	hermano(PadreP1,PadreP2).*/
+
+primo(P1,P2):-
+	padre(PadreP2,P2),
+	tio(PadreP2,P1).
+
+tio(P1,P2):-
+	padre(Padre,P2),
+	hermano(P1,Padre).
